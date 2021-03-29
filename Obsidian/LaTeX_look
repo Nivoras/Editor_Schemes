@@ -1,0 +1,110 @@
+:root {
+  --editor-font-family: "CMU Serif";
+  --view-font-family: "CMU Serif";
+  --view-font-family-header: "CMU Bright", Corbel;
+}
+
+/*LaTeX Fontsizes absolute and relative:
+    - Text 11pt - 1
+    - H1 ?
+    - H2 14pt - 1,4
+    - H3 12pt - 1,2 */
+
+/*-------------------------------------------------------*/
+/*Viewer*/
+div.markdown-preview-view {
+    font-family: var(--view-font-family);
+    font-size: 18px;
+}
+
+/* Font for the markdown preview panel */
+div.markdown-preview-view h1 {
+    font-family: var(--view-font-family-header);
+    font-size: 3.5em;
+    font-weight: 200;
+    margin-bottom: 50px;
+}
+
+/* Font for the markdown preview panel */
+div.markdown-preview-view h2 {
+    font-family: var(--view-font-family);
+    font-size: 1.4em;
+    margin-top: 1.5em;
+}
+
+/* Font for the markdown preview panel */
+div.markdown-preview-view h3 {
+    font-family: var(--view-font-family);
+    font-size: 1.2em;
+}
+
+/* Font for the markdown preview panel */
+div.markdown-preview-view p {
+    font-family: var(--view-font-family);
+    font-size: 1em;
+    line-height: 1.3em;
+    text-align: justify;
+}
+
+.markdown-preview-view img, .markdown-preview-view video {
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+
+.markdown-preview-view .caption {
+  margin-left: 17%;
+  margin-right: 17%;
+  width: 66%;
+  font-style: italic;
+  font-size: 0.85em;
+  text-align: center;
+  margin-top: -1.2em;
+}
+
+.markdown-preview-view ol, .markdown-preview-view ul {
+    margin-top: -1em;
+}
+
+.markdown-preview-view ol li {
+    line-height: 2.6rem;
+    margin-left: 1rem;
+}
+
+.markdown-preview-view ul li {
+    line-height: 2.6rem;
+    list-style: none;
+}
+
+.markdown-preview-view ul li:before {
+    content:"·";
+    font-size:4.5em;
+    vertical-align:middle;
+    margin-right: 0.5rem;
+    margin-left: -1rem;
+}
+
+/*-----------------------------------------------------------------------*/
+/*EDITOR*/
+
+/*-----------------------------------------------------------------------*/
+/*PDF-Export*/
+/* Line up "native" blockquotes with transcluded ones in PDF */
+@media print{.internal-embed{margin-left:-30px;}}
+
+/* Page breaks */
+@media print {
+  body {
+    width: 88%;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+  h1 {
+    page-break-before: always;
+  }
+  h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  pre, blockquote {
+    page-break-inside: avoid;
+  }
